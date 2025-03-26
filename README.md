@@ -21,8 +21,7 @@
 ---
 
 ## 📸 Screenshots
-
-> _Add screenshots of your homepage, map interface, or modal alerts._
+![Screenshot from 2025-03-26 15-12-35](https://github.com/user-attachments/assets/0926e3ce-dfb7-4f80-85b4-d74bf5d2f2ad)
 
 ---
 
