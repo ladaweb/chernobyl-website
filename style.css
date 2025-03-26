@@ -1,0 +1,30 @@
+body.dark-mode {
+    background-color: #1a1a1a;
+    color: #f1f1f1;
+  }
+  .dark-mode nav {
+    background-color: #333;
+  }
+  
+  .timeline {
+    list-style: none;
+    padding: 0;
+  }
+  .timeline li {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 20px;
+  }
+  .timeline li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 20px;
+    color: red;
+  }
+  .date {
+    font-weight: bold;
+    color: #ff5722;
+  }
+  
