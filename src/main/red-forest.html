@@ -1,15 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Red Forest</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Red Forest - Radiation Zone</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="../resources/styles.css" rel="stylesheet" />
 </head>
-<body>
-  <h1>Red Forest</h1>
-  <img src="red-forest.jpg" alt="Red Forest" class="hotspot-image" />
-  <p><strong>Radiation:</strong> 10 µSv/h</p>
-  <a href="index.html" class="back-link">Back to Map</a>
+<body class="bg-gray-900 text-white">
+
+  <!-- Background -->
+  <div class="relative min-h-screen bg-cover bg-center" style="background-image: url('../resources/images/forest_background.png');">
+    <div class="absolute inset-0 bg-black bg-opacity-70"></div>
+
+    <!-- Content -->
+    <div class="relative z-10 flex flex-col items-center justify-center min-h-screen text-center px-4">
+      <h1 class="text-4xl md:text-5xl font-bold mb-6">Red Forest – Danger Zone</h1>
+
+      <div class="max-w-3xl bg-white bg-opacity-10 backdrop-blur-md p-6 rounded-xl shadow-lg">
+        <!-- History -->
+        <p class="mb-4 text-lg leading-relaxed text-gray-200">
+          The Red Forest is one of the most radioactive locations in the world. Its name comes from the pine trees that
+          turned reddish-brown and died after absorbing massive doses of radiation following the 1986 explosion.
+          Despite decontamination efforts, radiation remains extremely high here.
+        </p>
+
+        <!-- Radiation Info -->
+        <div class="my-6 p-4 bg-black bg-opacity-30 rounded-lg border border-red-500">
+          <p class="text-xl font-semibold mb-2">Radiation Level:</p>
+          <p class="text-3xl font-bold text-red-400">0.9 µSv/h</p>
+          <p class="text-sm text-gray-300 mt-1">(µSv/h = microsieverts per hour)</p>
+          <p class="text-md text-orange-300 mt-2">🕐 Approximate Safe Exposure Time: ~1111 hours/year</p>
+        </div>
+
+        <!-- Tourist Info -->
+        <p class="text-gray-300">
+          Tours do not typically stop in the Red Forest due to its extreme radiation levels. However, visitors may drive
+          past the forest while on a guided route through the Exclusion Zone. <p class="text-2xl font-bold text-red-400">Stopping or walking in the forest is
+          strictly prohibited.</p>
+        </p>
+      </div>
+
+      <!-- Back Button -->
+      <a href="home.html" class="mt-10 inline-block bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-lg text-lg">
+        ← Back to Map
+      </a>
+    </div>
+  </div>
+
 </body>
 </html>
