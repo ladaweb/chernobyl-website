@@ -4,13 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Reactor 4 - Live Radiation</title>
-  <link href="https://unpkg.com/leaflet/dist/leaflet.css" rel="stylesheet" />
-  <link href="../resources/styles.css" rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
+  <link href="../resources/styles.css" rel="stylesheet" />
 </head>
 <body class="bg-gray-900 text-white">
 
-  <!-- Background -->
+  <!-- Background Layer -->
   <div class="relative min-h-screen bg-cover bg-center" style="background-image: url('../resources/images/reactor_4_background.png');">
     <div class="absolute inset-0 bg-black bg-opacity-70"></div>
 
@@ -18,22 +17,27 @@
     <div class="relative z-10 flex flex-col items-center justify-center min-h-screen text-center px-4">
       <h1 class="text-4xl md:text-5xl font-bold mb-6">Reactor 4 – Chernobyl</h1>
 
-      <div class="max-w-3xl bg-white bg-opacity-10 backdrop-blur-lg p-6 rounded-xl shadow-lg">
+      <div class="max-w-3xl bg-white bg-opacity-10 backdrop-blur-md p-6 rounded-xl shadow-lg">
         <!-- History -->
         <p class="mb-4 text-lg leading-relaxed text-gray-200">
-          Reactor 4 at the Chernobyl Nuclear Power Plant was the site of the catastrophic explosion on April 26, 1986 — the worst nuclear disaster in history. A combination of flawed reactor design and operator error led to a massive release of radioactive material, forcing mass evacuations and creating an exclusion zone that remains active to this day.
+          Reactor 4 at the Chernobyl Nuclear Power Plant was the site of the catastrophic explosion on April 26, 1986 —
+          the worst nuclear disaster in history. A flawed reactor design and operator error caused a massive release of
+          radioactive material, which forced the evacuation of over 100,000 people and left a lasting environmental impact.
         </p>
 
-        <!-- Radiation Level -->
+        <!-- Radiation Info -->
         <div class="my-6 p-4 bg-black bg-opacity-30 rounded-lg border border-red-500">
-          <p class="text-xl font-semibold mb-2">Live Radiation Level:</p>
-          <p id="radiation-value" class="text-3xl font-bold text-red-400 animate-pulse">-- µSv/h</p>
-          <p class="text-sm text-gray-300 mt-1" id="last-updated">Last updated: --</p>
+          <p class="text-xl font-semibold mb-2">Radiation Level:</p>
+          <p class="text-3xl font-bold text-red-400">1.2 µSv/h</p>
+          <p class="text-sm text-gray-300 mt-1">(µSv/h = microsieverts per hour)</p>
+          <p class="text-md text-orange-300 mt-2">🕐 Approximate Safe Exposure Time: ~833 hours/year</p>
         </div>
 
         <!-- Tourist Info -->
         <p class="text-gray-300">
-          Today, guided tours to the Chernobyl Exclusion Zone — including a controlled view of Reactor 4's sarcophagus — are legally allowed. Visitors must follow strict safety protocols and stay within designated paths. Despite the risks, it's one of the most unique and haunting destinations in the world.
+          Despite the risks, guided tours to the Exclusion Zone — including a distant view of Reactor 4's sarcophagus —
+          are legally permitted. Visitors must follow strict safety guidelines and avoid high-dose zones. Radiation
+          levels are monitored and brief exposure is considered safe.
         </p>
       </div>
 
@@ -44,15 +48,5 @@
     </div>
   </div>
 
-  <!-- Simulated Live Radiation Script -->
-  <script>
-    function simulateRadiation() {
-      const value = (0.1 + Math.random() * 2).toFixed(3); // µSv/h simulation
-      document.getElementById('radiation-value').textContent = value + ' µSv/h';
-      document.getElementById('last-updated').textContent = 'Last updated: ' + new Date().toLocaleTimeString();
-    }
-    simulateRadiation();
-    setInterval(simulateRadiation, 5000); // update every 5 seconds
-  </script>
 </body>
 </html>
