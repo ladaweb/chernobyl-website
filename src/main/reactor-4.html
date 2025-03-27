@@ -1,15 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Reactor 4</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Reactor 4 - Live Radiation</title>
+  <link href="https://unpkg.com/leaflet/dist/leaflet.css" rel="stylesheet" />
+  <link href="../resources/styles.css" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-  <h1>Reactor 4</h1>
-  <img src="reactor-4.jpg" alt="Reactor 4" class="hotspot-image" />
-  <p><strong>Radiation:</strong> 300 µSv/h</p>
-  <a href="index.html" class="back-link">Back to Map</a>
+<body class="bg-gray-900 text-white">
+
+  <!-- Background -->
+  <div class="relative min-h-screen bg-cover bg-center" style="background-image: url('../resources/images/reactor_4_background.png');">
+    <div class="absolute inset-0 bg-black bg-opacity-70"></div>
+
+    <!-- Content -->
+    <div class="relative z-10 flex flex-col items-center justify-center min-h-screen text-center px-4">
+      <h1 class="text-4xl md:text-5xl font-bold mb-6">Reactor 4 – Chernobyl</h1>
+
+      <div class="max-w-3xl bg-white bg-opacity-10 backdrop-blur-lg p-6 rounded-xl shadow-lg">
+        <!-- History -->
+        <p class="mb-4 text-lg leading-relaxed text-gray-200">
+          Reactor 4 at the Chernobyl Nuclear Power Plant was the site of the catastrophic explosion on April 26, 1986 — the worst nuclear disaster in history. A combination of flawed reactor design and operator error led to a massive release of radioactive material, forcing mass evacuations and creating an exclusion zone that remains active to this day.
+        </p>
+
+        <!-- Radiation Level -->
+        <div class="my-6 p-4 bg-black bg-opacity-30 rounded-lg border border-red-500">
+          <p class="text-xl font-semibold mb-2">Live Radiation Level:</p>
+          <p id="radiation-value" class="text-3xl font-bold text-red-400 animate-pulse">-- µSv/h</p>
+          <p class="text-sm text-gray-300 mt-1" id="last-updated">Last updated: --</p>
+        </div>
+
+        <!-- Tourist Info -->
+        <p class="text-gray-300">
+          Today, guided tours to the Chernobyl Exclusion Zone — including a controlled view of Reactor 4's sarcophagus — are legally allowed. Visitors must follow strict safety protocols and stay within designated paths. Despite the risks, it's one of the most unique and haunting destinations in the world.
+        </p>
+      </div>
+
+      <!-- Back Button -->
+      <a href="home.html" class="mt-10 inline-block bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-lg text-lg">
+        ← Back to Map
+      </a>
+    </div>
+  </div>
+
+  <!-- Simulated Live Radiation Script -->
+  <script>
+    function simulateRadiation() {
+      const value = (0.1 + Math.random() * 2).toFixed(3); // µSv/h simulation
+      document.getElementById('radiation-value').textContent = value + ' µSv/h';
+      document.getElementById('last-updated').textContent = 'Last updated: ' + new Date().toLocaleTimeString();
+    }
+    simulateRadiation();
+    setInterval(simulateRadiation, 5000); // update every 5 seconds
+  </script>
 </body>
 </html>
