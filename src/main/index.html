@@ -38,24 +38,7 @@
     </div>
   </section>
 
-  <div id="timeline" class="p-8">
-    <h2 class="text-2xl font-bold mb-4">Chernobyl Disaster Timeline</h2>
-    <ul class="timeline">
-      <li>
-        <span class="date">April 26, 1986</span>
-        <p>The explosion of Reactor 4 occurs.</p>
-      </li>
-      <li>
-        <span class="date">April 27, 1986</span>
-        <p>The city of Pripyat is evacuated.</p>
-      </li>
-      <li>
-        <span class="date">May 1, 1986</span>
-        <p>May Day celebrations proceed in Kiev despite radiation concerns.</p>
-      </li>
-    </ul>
-  </div>
-  
+
   <!-- Map -->
 <!-- Map Section -->
 <main class="relative h-screen flex items-center justify-center bg-cover bg-center" style="background-image: url('../resources/images/dark-background.jpg');">
@@ -65,41 +48,10 @@
   </div>
 </main>
 
+  <div id="map" style="height: 600px;" class="my-4"></div>
+
   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-  <script>
-    // Initialize the map
-    const map = L.map('map').setView([ 51.4046, 30.057], 12);
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '© OpenStreetMap contributors'
-    }).addTo(map);
+  <script src="code.js"></script>
 
-    // Define locations with descriptions
-    const locations = [
-      { lat: 51.4046, lng: 30.0571, name: "Middle School Number 3", description: "Perhaps the most eerie place in the abandoned town of Pripyat. It’s infamous for its collection of gas masks, looted and discarded after the disaster." },
-      { lat: 51.4085, lng: 30.0579, name: "The Hospital", description: "A largely intact medical facility. Its basement remains one of the most radioactive places in the zone due to contaminated clothing of first responders." },
-      { lat: 51.4064, lng: 30.0553, name: "The Azure Swimming Pool", description: "Used until 1998 primarily by liquidators. One of the cleanest places in the zone today, though empty." },
-      { lat: 51.4069, lng: 30.0586, name: "The Amusement Park", description: "An iconic symbol of the Chernobyl disaster, featuring a ferris wheel and other unfinished rides." },
-      { lat: 51.5871, lng: 30.2033, name: "The Duga Radar", description: "A Soviet early warning missile defense system, decommissioned in 1989. Sometimes climbable with a bribe." }
-    ];
-
-    const dangerZones = ["Reactor 4", "Red Forest"];
-
-hotspots.forEach(spot => {
-  L.marker([spot.lat, spot.lng]).addTo(map)
-    .bindPopup(`<b>${spot.name}</b><br>Radiation: ${spot.radiation}`)
-    .on('click', () => {
-      if (dangerZones.includes(spot.name)) {
-        alert("Warning: High Radiation Zone! Proceed with caution.");
-      }
-    });
-});
-
-
-    // Add markers
-    locations.forEach(location => {
-      L.marker([location.lat, location.lng]).addTo(map)
-        .bindPopup(`<b>${location.name}</b><br>${location.description}`);
-    });
-  </script>
 </body>
 </html>
