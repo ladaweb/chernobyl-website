@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>History of Chernobyl</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="../resources/styles.css" rel="stylesheet" />
+</head>
+<body class="bg-gray-900 text-white">
+
+  <!-- Background -->
+  <div class="relative min-h-screen bg-cover bg-center" style="background-image: url('../resources/images/history_background.jpg');">
+    <div class="absolute inset-0 bg-black bg-opacity-70"></div>
+
+    <!-- Navigation -->
+    <nav class="bg-gray-800 relative z-10">
+      <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+        <div class="relative flex h-16 items-center justify-between">
+          <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+            <div class="flex shrink-0 items-center">
+              <img class="h-8 w-auto" src="../resources/images/sign.png" alt="Safe Chernobyl">
+            </div>
+            <div class="text-white ml-4 text-lg font-bold">Safe Chernobyl</div>
+            <div class="hidden sm:block w-full">
+              <div class="flex justify-center space-x-8">
+                <a href="about.html" class="rounded-lg px-5 py-3 text-lg font-medium text-gray-300 hover:bg-gray-700 hover:text-white">About</a>
+                <a href="home.html#map" class="rounded-md px-5 py-3 text-lg font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Radiation Map</a>
+                <a href="#" class="rounded-lg bg-gray-900 px-5 py-3 text-lg font-medium text-white">History</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Content -->
+    <div class="relative z-10 flex flex-col items-center justify-center min-h-screen text-center px-4 py-12">
+      <h1 class="text-4xl md:text-5xl font-bold mb-6 text-red-500">History of Chernobyl</h1>
+
+      <!-- Brief History -->
+      <div class="max-w-4xl bg-white bg-opacity-10 backdrop-blur-md p-8 rounded-xl shadow-lg mb-8">
+        <h2 class="text-2xl font-semibold mb-4">The Disaster of April 26, 1986</h2>
+        <p class="text-lg leading-relaxed text-gray-200 mb-4">
+          The Chernobyl disaster occurred on April 26, 1986, at the No. 4 reactor in the Chernobyl Nuclear Power Plant, near the city of Pripyat in the Soviet Union (now Ukraine). It is considered the worst nuclear disaster in history, both in terms of cost and casualties. A routine safety test went catastrophically wrong due to a combination of reactor design flaws and operator errors, leading to a steam explosion and a subsequent fire that released massive amounts of radioactive particles into the atmosphere.
+        </p>
+        <p class="text-lg leading-relaxed text-gray-200">
+          The disaster forced the evacuation of over 100,000 people from the surrounding areas, creating a 30-kilometer Exclusion Zone that remains largely uninhabited to this day. The long-term effects include increased rates of cancer, environmental contamination, and the displacement of entire communities. The disaster also had a profound impact on global nuclear policy and safety standards.
+        </p>
+      </div>
+
+      <!-- YouTube Video -->
+      <div class="max-w-4xl w-full mb-8">
+        <h2 class="text-2xl font-semibold mb-4">Watch: The Chernobyl Disaster Explained</h2>
+        <div class="relative" style="padding-bottom: 56.25%; height: 0; overflow: hidden;">
+          <iframe class="absolute top-0 left-0 w-full h-full rounded-lg" width="560" height="315" src="https://www.youtube.com/embed/f5ptI6Pi3GA?si=0BZDx19KpGvm56Qk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <p class="text-gray-300 mt-4">
+          If the video does not load, you can <a href="https://www.youtube.com/watch?v=f5ptI6Pi3GA" target="_blank" class="text-red-400 hover:underline">watch it on YouTube</a>.
+        </p>
+      </div>
+
+      <!-- Stories of People -->
+      <div class="max-w-4xl bg-white bg-opacity-10 backdrop-blur-md p-8 rounded-xl shadow-lg">
+        <h2 class="text-2xl font-semibold mb-6">Stories of Resilience</h2>
+
+        <!-- Story 1: Valery Legasov -->
+        <div class="mb-8">
+          <h3 class="text-xl font-bold text-red-400 mb-2">Valery Legasov – The Scientist Who Exposed the Truth</h3>
+          <p class="text-lg leading-relaxed text-gray-200 mb-4">
+            Valery Legasov was the chief of the commission investigating the Chernobyl disaster. A prominent Soviet inorganic chemist, he played a crucial role in mitigating the disaster’s aftermath, advocating for the use of sand, clay, and boron to extinguish the fire and limit the spread of radiation. Despite facing political pressure to downplay the disaster, Legasov insisted on transparency, revealing the reactor’s design flaws to the international community. Tragically, the stress and political backlash took a toll on him, and he died by suicide in 1988, leaving behind audio recordings that detailed the truth about Chernobyl.
+          </p>
+          <img src="../resources/images/valery_legasov.jpg" alt="Valery Legasov" class="w-68 h-68 mx-auto rounded-lg shadow-md">
+        </div>
+
+        <!-- Story 2: Maria Protsenko -->
+        <div class="mb-8">
+          <h3 class="text-xl font-bold text-red-400 mb-2">Maria Protsenko – The Architect of Evacuation</h3>
+          <p class="text-lg leading-relaxed text-gray-200 mb-4">
+            Maria Protsenko was the chief architect of Pripyat and one of the key figures in organizing the city’s evacuation after the disaster. At 53 years old, she worked tirelessly to ensure the safe evacuation of Pripyat’s 50,000 residents, coordinating buses and logistics under extreme pressure. Protsenko herself was exposed to high levels of radiation during the process and later suffered from health issues as a result. Her efforts saved countless lives, and she remained a vocal advocate for the displaced residents of Pripyat until her death in 2012.
+          </p>
+          <img src="../resources/images/maria_protsenko.jpg" alt="Maria Protsenko" class="w-68 h-68 mx-auto rounded-lg shadow-md">
+        </div>
+
+        <!-- Story 3: The Liquidators -->
+        <div>
+          <h3 class="text-xl font-bold text-red-400 mb-2">The Liquidators – Heroes of the Cleanup</h3>
+          <p class="text-lg leading-relaxed text-gray-200 mb-4">
+            The "liquidators" were the hundreds of thousands of workers—soldiers, firefighters, miners, and volunteers—who were sent to Chernobyl to contain the disaster. They cleared radioactive debris, built the sarcophagus around Reactor 4, and decontaminated the surrounding areas, often with minimal protective gear. Many liquidators, like firefighter Vladimir Pravik, who was among the first to respond to the explosion, suffered acute radiation sickness and died within weeks. Others faced long-term health issues, including cancer. Their bravery and sacrifice are commemorated in monuments like the Chernobyl Town Monument.
+          </p>
+          <img src="../resources/images/the_liquidators.jpg" alt="The Liquidators" class="w-68 h-68 mx-auto rounded-lg shadow-md">
+        </div>
+      </div>
+
+      <!-- Back Button -->
+      <a href="home.html" class="mt-10 inline-block bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-lg text-lg">
+        ← Back to Home
+      </a>
+    </div>
+  </div>
+
+</body>
+</html>

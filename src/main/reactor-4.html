@@ -1,15 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Reactor 4</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Reactor 4 - Live Radiation</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="../resources/styles.css" rel="stylesheet" />
 </head>
-<body>
-  <h1>Reactor 4</h1>
-  <img src="reactor-4.jpg" alt="Reactor 4" class="hotspot-image" />
-  <p><strong>Radiation:</strong> 300 µSv/h</p>
-  <a href="index.html" class="back-link">Back to Map</a>
+<body class="bg-gray-900 text-white">
+
+  <!-- Background Layer -->
+  <div class="relative min-h-screen bg-cover bg-center" style="background-image: url('../resources/images/reactor_4_background.png');">
+    <div class="absolute inset-0 bg-black bg-opacity-70"></div>
+
+    <!-- Navigation -->
+    <nav class="bg-gray-800 relative z-10">
+      <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+        <div class="relative flex h-16 items-center justify-between">
+          <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+            <div class="flex shrink-0 items-center">
+              <img class="h-8 w-auto" src="../resources/images/sign.png" alt="Safe Chernobyl">
+            </div>
+            <div class="text-white ml-4 text-lg font-bold">Safe Chernobyl</div>
+            <div class="hidden sm:block w-full">
+              <div class="flex justify-center space-x-8">
+                <a href="about.html" class="rounded-lg px-5 py-3 text-lg font-medium text-gray-300 hover:bg-gray-700 hover:text-white">About</a>
+                <a href="home.html#map" class="rounded-md px-5 py-3 text-lg font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Radiation Map</a>
+                <a href="history.html" class="rounded-lg px-5 py-3 text-lg font-medium text-gray-300 hover:bg-gray-700 hover:text-white">History</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Content -->
+    <div class="relative z-10 flex flex-col items-center justify-center min-h-screen text-center px-4">
+      <h1 class="text-4xl md:text-5xl font-bold mb-6">Reactor 4 – Chernobyl</h1>
+
+      <div class="max-w-3xl bg-white bg-opacity-10 backdrop-blur-md p-6 rounded-xl shadow-lg">
+        <!-- History -->
+        <p class="mb-4 text-lg leading-relaxed text-gray-200">
+          Reactor 4 at the Chernobyl Nuclear Power Plant was the site of the catastrophic explosion on April 26, 1986 —
+          the worst nuclear disaster in history. A flawed reactor design and operator error caused a massive release of
+          radioactive material, which forced the evacuation of over 100,000 people and left a lasting environmental impact.
+        </p>
+
+        <!-- Radiation Info -->
+        <div class="my-6 p-4 bg-black bg-opacity-30 rounded-lg border border-red-500">
+          <p class="text-xl font-semibold mb-2">Radiation Level:</p>
+          <p class="text-3xl font-bold text-red-400">1.2 µSv/h</p>
+          <p class="text-sm text-gray-300 mt-1">(µSv/h = microsieverts per hour)</p>
+          <p class="text-md text-orange-300 mt-2">🕐 Approximate Safe Exposure Time: ~833 hours/year</p>
+        </div>
+
+        <!-- Tourist Info -->
+        <p class="text-gray-300">
+          Despite the risks, guided tours to the Exclusion Zone — including a distant view of Reactor 4's sarcophagus —
+          are legally permitted. Visitors must follow strict safety guidelines and avoid high-dose zones. Radiation
+          levels are monitored and brief exposure is considered safe.
+        </p>
+      </div>
+
+      <!-- Back Button -->
+      <a href="home.html" class="mt-10 inline-block bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-lg text-lg">
+        ← Back to Map
+      </a>
+    </div>
+  </div>
+
 </body>
 </html>
