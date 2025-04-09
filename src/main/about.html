@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Safe Chernobyl</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="../resources/styles.css" rel="stylesheet" />
+</head>
+<body class="bg-gray-900 text-white">
+
+  <!-- Background -->
+  <div class="relative min-h-screen bg-cover bg-center" style="background-image: url('../resources/images/background.png');">
+    <div class="absolute inset-0 bg-black bg-opacity-70"></div>
+
+    <!-- Navigation -->
+    <nav class="bg-gray-800 relative z-10">
+      <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+        <div class="relative flex h-16 items-center justify-between">
+          <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+            <div class="flex shrink-0 items-center">
+              <img class="h-8 w-auto" src="../resources/images/sign.png" alt="Safe Chernobyl">
+            </div>
+            <div class="text-white ml-4 text-lg font-bold">Safe Chernobyl</div>
+            <div class="hidden sm:block w-full">
+              <div class="flex justify-center space-x-8">
+                <a href="#" class="rounded-lg bg-gray-900 px-5 py-3 text-lg font-medium text-white">About</a>
+                <a href="home.html#map" class="rounded-md px-5 py-3 text-lg font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Radiation Map</a>
+                <a href="history.html" class="rounded-lg px-5 py-3 text-lg font-medium text-gray-300 hover:bg-gray-700 hover:text-white">History</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Content -->
+    <div class="relative z-10 flex flex-col items-center justify-center min-h-screen text-center px-4 py-12">
+      <h1 class="text-4xl md:text-5xl font-bold mb-6 text-red-500">About Safe Chernobyl</h1>
+
+      <!-- Purpose of the Project -->
+      <div class="max-w-4xl bg-white bg-opacity-10 backdrop-blur-md p-8 rounded-xl shadow-lg mb-8">
+        <h2 class="text-2xl font-semibold mb-4">Purpose of the Project</h2>
+        <p class="text-lg leading-relaxed text-gray-200 mb-4">
+          The "Safe Chernobyl" project aims to educate the public about the Chernobyl disaster and its lasting impact on the environment and human lives. By providing an interactive radiation map, we highlight the current radiation levels at various locations within the Chernobyl Exclusion Zone, helping visitors understand the risks and safety considerations of exploring this historic site.
+        </p>
+        <p class="text-lg leading-relaxed text-gray-200">
+          Our goal is to raise awareness about the disaster’s history, honor the resilience of those affected, and provide a resource for tourists interested in visiting Chernobyl responsibly. The project combines historical information, real-time radiation data, and visual storytelling to create an immersive and educational experience.
+        </p>
+      </div>
+
+      <!-- Tourist Attractions -->
+      <div class="max-w-4xl bg-white bg-opacity-10 backdrop-blur-md p-8 rounded-xl shadow-lg">
+        <h2 class="text-2xl font-semibold mb-6">Tourist Attractions in the Exclusion Zone</h2>
+        <ul id="attractions-list" class="text-lg leading-relaxed text-gray-200 space-y-4">
+          <!-- List will be populated by JavaScript -->
+        </ul>
+      </div>
+
+      <!-- Back Button -->
+      <a href="home.html" class="mt-10 inline-block bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-lg text-lg">
+        ← Back to Home
+      </a>
+    </div>
+  </div>
+
+  <!-- JavaScript to populate the attractions list -->
+  <script>
+    // Radiation sites (same as in code.js)
+    const locations = [
+      { lat: 51.3890, lng: 30.0995, name: "Reactor 4", description: "The site of the 1986 explosion.", radiation: 1.2, link: "reactor-4.html" },
+      { lat: 51.3830, lng: 30.1080, name: "Red Forest", description: "Highly radioactive forest near the reactor.", radiation: 400, link: "red-forest.html" },
+      { lat: 51.4085, lng: 30.0579, name: "The Hospital", description: "Basement holds radioactive clothing of first responders.", radiation: 0.4 },
+      { lat: 51.4046, lng: 30.0571, name: "Middle School Number 3", description: "Gas masks scattered across abandoned classrooms.", radiation: 0.2 },
+      { lat: 51.4064, lng: 30.0553, name: "Azure Swimming Pool", description: "One of the cleanest places in the zone, used until 1998.", radiation: 0.15 },
+      { lat: 51.4069, lng: 30.0586, name: "Amusement Park", description: "Ferris wheel and bumper cars, never officially opened.", radiation: 0.3 },
+      { lat: 51.5871, lng: 30.2033, name: "Duga Radar", description: "Soviet over-the-horizon radar system in the forest.", radiation: 0.1 },
+      { lat: 51.2786, lng: 30.2241, name: "Chernobyl Town Monument", description: "Tribute to those who responded to the disaster.", radiation: 0.12 }
+    ];
+
+    // Function to determine color based on radiation level (same as in code.js)
+    function getMarkerColor(radiation) {
+      if (radiation < 0.2) return 'text-green-400';
+      if (radiation < 0.5) return 'text-orange-400';
+      return 'text-red-400';
+    }
+
+    // Populate the attractions list
+    const attractionsList = document.getElementById('attractions-list');
+    locations.forEach(loc => {
+      const li = document.createElement('li');
+      const colorClass = getMarkerColor(loc.radiation);
+      const safeHours = Math.floor(1000 / loc.radiation); // based on 1 mSv/year limit
+
+      // Create the list item content
+      let content = `<span class="font-bold ${colorClass}">${loc.name}</span>: ${loc.description} <br>`;
+      content += `<span class="text-gray-300">Radiation: <span class="${colorClass}">${loc.radiation} µSv/h</span> | Safe Exposure Time: ~${safeHours} hours/year</span>`;
+
+      // If the location has a link, wrap the name in an anchor tag
+      if (loc.link) {
+        content = `<a href="${loc.link}" class="font-bold ${colorClass} hover:underline">${loc.name}</a>: ${loc.description} <br>`;
+        content += `<span class="text-gray-300">Radiation: <span class="${colorClass}">${loc.radiation} µSv/h</span> | Safe Exposure Time: ~${safeHours} hours/year</span>`;
+      }
+
+      li.innerHTML = content;
+      attractionsList.appendChild(li);
+    });
+  </script>
+</body>
+</html>

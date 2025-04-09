@@ -30,7 +30,7 @@ const locations = [
   { lat: 51.3890, lng: 30.0995, name: "Reactor 4", description: "The site of the 1986 explosion.", radiation: 1.2, link: "reactor-4.html" },
   { lat: 51.3830, lng: 30.1080, name: "Red Forest", description: "Highly radioactive forest near the reactor.", radiation: 400, link: "red-forest.html" },
   { lat: 51.4085, lng: 30.0579, name: "The Hospital", description: "Basement holds radioactive clothing of first responders.", radiation: 0.4 },
-  { lat: 51.4046, lng: 30.0571, name: "Middle School Number 3", description: "Gas masks scattered across abandoned classrooms.", radiation: 0.2 },
+  { lat: 51.4046, lng: 30.0571, name: "Middle School Number 3", description: "Gas masks scattered across abandoned classrooms.", radiation: 0.3, link: "middle-school-3.html" },
   { lat: 51.4064, lng: 30.0553, name: "Azure Swimming Pool", description: "One of the cleanest places in the zone, used until 1998.", radiation: 0.15 },
   { lat: 51.4069, lng: 30.0586, name: "Amusement Park", description: "Ferris wheel and bumper cars, never officially opened.", radiation: 0.3 },
   { lat: 51.5871, lng: 30.2033, name: "Duga Radar", description: "Soviet over-the-horizon radar system in the forest.", radiation: 0.1 },
